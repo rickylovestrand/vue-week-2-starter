@@ -13,7 +13,7 @@
     <div id="app" v-cloak>
 
 
-        <!-- TODO show errors from form validation -->
+        <!-- Show errors from form validation -->
         <div class="alert alert-danger" v-if="errors.length>0">
             <ul>
                 <li v-for="error in errors">{{ error }}</li>
@@ -45,7 +45,7 @@
                         <th>Present?</th>
                     </tr>
 
-                   <!-- TODO create table rows 
+                   <!-- Create table rows
                    Each row will have a checkbox, bound to the app's data 
                    When the checkbox is checked/unchecked, the student will be signed in/out -->
                     
@@ -61,7 +61,7 @@
         </div>
 
 
-        <!-- TODO show a message when student arrives or leaves  -->
+        <!-- Show a message when student arrives or leaves  -->
 
         <div v-if="mostRecentStudent.name">
             <div class="alert alert-success" v-if="mostRecentStudent.present">
@@ -78,7 +78,7 @@
     <script>
 
 
-        // TODO Vue app  
+        // Vue app  
         
         let app = Vue.createApp({
             data() {
@@ -106,8 +106,6 @@
                     if (!this.newStarID) {
                         this.errors.push('StarID must be entered')
                     }
-
-                    // todo add other checks here if needed
 
                     if(this.errors.length == 0) {
                     let student = {name: this.newStudentName, starID: this.newStarID, present: false}
